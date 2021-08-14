@@ -1,0 +1,35 @@
+{
+  "name": "challgren/php-aws-smtp-password",
+  "type": "library",
+  "description": "Converts an AWS secret access key to a SMTP password.",
+  "keywords": [
+    "aws",
+    "access secret",
+    "smtp",
+    "smpt password",
+    "aws smtp password"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Chris Hallgren",
+      "email": "challgren@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.5 || ^9.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "PhpAwsSmtpPassword\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "PhpAwsSmtpPassword\\Test\\": "tests/"
+    }
+  }
+}
