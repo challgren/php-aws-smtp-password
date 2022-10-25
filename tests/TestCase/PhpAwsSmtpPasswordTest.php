@@ -14,7 +14,7 @@ class PhpAwsSmtpPasswordTest extends TestCase
      */
     public function testConvert()
     {
-        $expected = 'WzRdsEz/2FJQQt+rwbD6tTVhwGOQ7EZuFPZcbvrfFUsZYv0=';
+        $expected = 'BLBM/9hSUELfq8Gw+rU1YcBjkOxGbhT2XG763xVLGWL9';
 
         $this->assertEquals($expected, PhpAwsSmtpPassword::convert($this->key, $this->region));
     }
