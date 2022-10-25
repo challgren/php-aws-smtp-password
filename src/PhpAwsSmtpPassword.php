@@ -55,7 +55,7 @@ class PhpAwsSmtpPassword
      * Per https://docs.aws.amazon.com/ses/latest/DeveloperGuide/smtp-credentials.html this should never change
      * @var string Version to hash with
      */
-    protected static $version = '[4]';
+    protected static $version = 0x04;
 
     /**
      * Converts a secret key to a password that can be used with SMTP
@@ -75,7 +75,7 @@ class PhpAwsSmtpPassword
         $signature = hash_hmac('sha256', PhpAwsSmtpPassword::$service, $signature, true);
         $signature = hash_hmac('sha256', PhpAwsSmtpPassword::$terminal, $signature, true);
         $signature = hash_hmac('sha256', PhpAwsSmtpPassword::$message, $signature, true);
-        $signatureAndVersion = PhpAwsSmtpPassword::$version . $signature;
+        $signatureAndVersion = chr(PhpAwsSmtpPassword::$version) . $signature;
 
         return base64_encode($signatureAndVersion);
     }
